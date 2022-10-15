@@ -11,3 +11,6 @@
 
 {{-- Fancybox JS --}}
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+{{-- Swiper JS --}}
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

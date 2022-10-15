@@ -33,43 +33,93 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="card">
-                        <img src="{{ url('assets/base/img/residence01-img.png') }}" alt="residence-img"
-                            class="card-img-top" data-fancybox="residence-img" />
-                        <div class="card-body">
-                            <a href="#">
-                                <h5 class="card-title">Title</h5>
-                            </a>
-                            <h6 class="card-subtitle">Location</h6>
-                            <div class="d-flex mt-4 text-light"
-                                style="flex-wrap: wrap; column-gap: 1; row-gap: 0.4rem;">
-                                <div class="bed-icon">
-                                    <i class="bi bi-displayport-fill"></i>
-                                    <span class="ml-2">1 Beds</span>
-                                </div>
-                                <div class="bath-icon">
-                                    <i class="bi bi-archive-fill"></i>
-                                    <span class="ml-2">1 Bath</span>
-                                </div>
-                                <div class="square-icon">
-                                    <i class="bi bi-plus-square-dotted"></i>
-                                    <span class="ml-2">1024 m2</span>
-                                </div>
-                            </div>
-                        </div>
+                @foreach ($residences as $residence)
+                    <div class="col-lg-4 mb-4">
+                        <x-residence-card :residence="$residence" :fancybox="'residence_home_img'" />
                     </div>
-                </div>
+                @endforeach
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="#" class="btn btn-lg btn-primary shadow-sm d-none d-lg-inline-block">
+                    <a href="{{ route('residences.index') }}"
+                        class="btn btn-lg btn-primary shadow-sm d-none d-lg-inline-block">
                         <i class="bi bi-grid-3x3-gap"></i>
-                        <span class="mx-2">View All Properties</span>
+                        <span class="mx-2">View All Residences</span>
                     </a>
-                    <a href="#" class="btn btn-primary shadow-sm d-lg-none">
+                    <a href="{{ route('residences.index') }}" class="btn btn-primary shadow-sm d-lg-none">
                         <i class="bi bi-grid-3x3-gap"></i>
-                        <span class="mx-2">View All Properties</span>
+                        <span class="mx-2">View All Residences</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offer">
+        <img src="{{ url('assets/base/img/arrow-shade-pattern.png') }}" alt="arrow-shade-pattern"
+            class="overlay-img img-fluid" />
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="heading">Why To Choose Us</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center">
+                <div class="col-md-4 col-12 mb-5">
+                    <img src="{{ url('assets/base/img/loupe.png') }}" alt="loupe-icon" class="offer-icon" />
+                    <h5 class="card-title text-light">Easy to find</h5>
+                    <p class="card-text text-light">Urna, massa aliqua dui pellentesque. Ac, gravida in. Diam vitae, nec
+                        mattis lectus quam pretium amet facilisis.</p>
+                </div>
+                <div class="col-md-4 col-12 mb-5">
+                    <img src="{{ url('assets/base/img/tag.png') }}" alt="tag-icon" class="offer-icon" />
+                    <h5 class="card-title text-light">Affordable Prices</h5>
+                    <p class="card-text text-light">Urna, massa aliqua dui pellentesque. Ac, gravida in. Diam vitae, nec
+                        mattis lectus quam pretium amet facilisis.</p>
+                </div>
+                <div class="col-md-4 col-12 mb-5">
+                    <img src="{{ url('assets/base/img/quick.png') }}" alt="quick-icon" class="offer-icon" />
+                    <h5 class="card-title text-light">Quickly Process</h5>
+                    <p class="card-text text-light">Urna, massa aliqua dui pellentesque. Ac, gravida in. Diam vitae, nec
+                        mattis lectus quam pretium amet facilisis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact"
+        style="background: url('/assets/images/residence-bg.png') no-repeat; background-size: cover">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-6 mb-5">
+                    <img src="{{ url('assets/base/img/home-1-img.png') }}" alt="home-1-img" class="img-fluid" />
+                </div>
+                <div class="col-lg-3 col-6 mb-5">
+                    <img src="{{ url('assets/base/img/home-2-img.png') }}" alt="home-2-img" class="img-fluid" />
+                </div>
+                <div class="col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                    <h2 class="heading">
+                        We Help People To
+                        <br />
+                        Find Homes
+                    </h2>
+                    <p class="text-light mb-4">
+                        Mauris orci donec blandit maecenas. Orci lorem purus porttitor massa consectetur. Neque,
+                        vestibulum
+                        sed varius magna et at. Eu, adipiscing morbi augue justo. Nibh laoreet
+                        volutpat quis velit. Blandit aliquam donec sed morbi congue eget lorem viverra porta id
+                        lobortis.
+                    </p>
+                    <a href="https://api.whatsapp.com/send?phone=6281274786920"
+                        class="btn btn-lg btn-primary shadow-sm d-none d-lg-inline-block" target="_blank"
+                        rel="noreferrer">
+                        <i class="bi bi-whatsapp"></i>
+                        <span class="mx-2">Get In Touch</span>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=6281274786920"
+                        class="btn btn-primary shadow-sm d-lg-none" target="_blank" rel="noreferrer">
+                        <i class="bi bi-whatsapp"></i>
+                        <span class="mx-2">Get In Touch</span>
                     </a>
                 </div>
             </div>

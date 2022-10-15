@@ -8,5 +8,8 @@
 {{-- Fancybox CSS --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
+{{-- Swiper CSS --}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
 {{-- Custom CSS --}}
 <link rel="stylesheet" href="{{ url('assets/base/css/style.css') }}">

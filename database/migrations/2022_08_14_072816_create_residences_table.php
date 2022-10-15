@@ -15,7 +15,7 @@ class CreateResidencesTable extends Migration
     {
         Schema::create('residences', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('location');

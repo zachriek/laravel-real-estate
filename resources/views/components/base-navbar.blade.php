@@ -14,15 +14,22 @@
             <div class="navbar-nav ml-md-auto">
                 <a class="nav-link {{ Route::current()->getName() === 'home' ? 'active' : '' }}"
                     href="{{ route('home') }}">Home</a>
-                <a class="nav-link {{ Route::current()->getName() === 'properties' ? 'active' : '' }}"
-                    href="#">Properties</a>
+                <a class="nav-link {{ str_contains(Route::current()->getName(), 'residences') ? 'active' : '' }}"
+                    href="{{ route('residences.index') }}">Residences</a>
                 @auth
-                    <a class="nav-link {{ Route::current()->getName() === 'cart' ? 'active' : '' }}" href="#">
+                    <a class="nav-link {{ str_contains(Route::current()->getName(), 'carts') ? 'active' : '' }}"
+                        href="{{ route('carts.index') }}">
                         <i class="bi bi-cart"></i>
                         <span class="mx-1">Cart</span>
                         <span class="badge badge-pill badge-primary">2</span>
                     </a>
-                    <a class="btn btn-primary shadow-sm mt-3 mt-md-0 ml-md-5" href="#">Dashboard</a>
+                    @if (auth()->user()->role === 'ADMIN')
+                        <a class="btn btn-primary shadow-sm mt-3 mt-md-0 ml-md-5"
+                            href="{{ route('admin.dashboard') }}">Dashboard</a>
+                    @else
+                        <a class="btn btn-primary shadow-sm mt-3 mt-md-0 ml-md-5"
+                            href="{{ route('profile.edit') }}">Dashboard</a>
+                    @endif
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="btn nav-link">Logout</button>
