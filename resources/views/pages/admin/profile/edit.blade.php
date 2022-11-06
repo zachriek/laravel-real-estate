@@ -10,15 +10,16 @@
       <div class="col-lg-6 col-md-8 col-12">
         <div class="card">
           <div class="card-body">
-            <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PATCH')
               {{-- Image Preview --}}
               @if (auth()->user()->image)
                 <img class="img-thumbnail" src="{{ url('assets/admin/img/' . auth()->user()->image) }}"
-                  alt="user-profile">
+                  alt="user-profile" loading="lazy">
               @else
-                <img class="img-thumbnail" src="https://source.unsplash.com/random/300x300?person" alt="user-profile">
+                <img class="img-thumbnail" src="https://source.unsplash.com/random/300x300?person" alt="user-profile"
+                  loading="lazy">
               @endif
 
               {{-- Residence Image --}}
@@ -100,7 +101,6 @@
       const previewImage = (input) => {
         const reader = new FileReader();
         reader.onload = function(e) {
-          console.log(e.target.result);
           image.src = e.target.result;
         }
         reader.readAsDataURL(input.files[0]);

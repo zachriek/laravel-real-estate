@@ -74,8 +74,8 @@ class AdminResidenceController extends Controller
         }
 
         $residence->update($data);
-        toast('New residence successfully updated!', 'success');
-        return redirect()->route('admin.residences.index')->with('success', 'New residence successfully updated!');
+        toast('Residence successfully updated!', 'success');
+        return redirect()->route('admin.residences.index')->with('success', 'Residence successfully updated!');
     }
 
     public function destroy(Residence $residence)

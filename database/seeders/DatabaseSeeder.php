@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Residence;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +18,21 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         // https://source.unsplash.com/random/800x400?residence
+        User::create([
+            'name' => 'Admin1',
+            'username' => 'admin1',
+            'role' => 'admin',
+            'email' => 'admin1@gmail.com',
+            'password' => Hash::make('admin1')
+        ]);
+        User::create([
+            'name' => 'User1',
+            'username' => 'user1',
+            'role' => 'user',
+            'email' => 'user1@gmail.com',
+            'password' => Hash::make('user1')
+        ]);
+
         Residence::create([
             'name' => 'Aliva Priva Jalvin',
             'slug' => 'aliva-priva-jalvin',

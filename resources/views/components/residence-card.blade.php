@@ -1,10 +1,10 @@
 <div class="card residence-card">
   @if ($residence->image === null)
     <img src="{{ 'https://source.unsplash.com/random/800x400?residence' }}" alt="residence-img" class="card-img-top"
-      data-fancybox="{{ $fancybox }}" />
+      data-fancybox="{{ $fancybox }}" loading="lazy" />
   @else
     <img src="{{ url('assets/base/img/' . $residence->image) }}" alt="residence-img" class="card-img-top"
-      data-fancybox="{{ $fancybox }}" />
+      data-fancybox="{{ $fancybox }}" loading="lazy" />
   @endif
   <div class="card-body">
     <h5 class="card-title">{{ $residence->name }}</h5>
